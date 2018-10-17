@@ -11,10 +11,11 @@ for(let i=0; i< allButtons.length; i++){
 }
 
 var n = 0;
-allButtons.eq(n%4).trigger('click')
+var size = allButtons.length
+allButtons.eq(n%size).trigger('click')
 setInterval(()=>{
   n += 1
-  allButtons.eq(n%4).trigger('click')
+  allButtons.eq(n%size).trigger('click')
 }, 2000)
 
 
