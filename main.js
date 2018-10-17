@@ -13,9 +13,13 @@ for(let i=0; i< allButtons.length; i++){
 var n = 0;
 var size = allButtons.length
 allButtons.eq(n%size).trigger('click')
+  .addClass('red')
+  .siblings('.red').removeClass('red')
 setInterval(()=>{
   n += 1
   allButtons.eq(n%size).trigger('click')
+    .addClass('red')
+    .siblings('.red').removeClass('red')
 }, 2000)
 
 
