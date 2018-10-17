@@ -1,0 +1,25 @@
+
+  $(p1).on('click',()=>{
+    $(images).css({
+      transform: 'translateX(0)'
+    })
+  })
+
+  $(p2).on('click',()=>{
+    $(images).css({
+      transform: 'translateX(-300px)'
+    })
+  })
+
+  $(p3).on('click',()=>{
+    $(images).css({
+      transform: 'translateX(-600px)'
+    })
+  })
+  
+  $(p4).on('click',()=>{
+    $(images).css({
+      transform: 'translateX(-1200px)'
+    })
+  })
+
