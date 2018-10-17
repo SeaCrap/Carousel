@@ -7,8 +7,21 @@ for(let i=0; i< allButtons.length; i++){
     $('#images').css({
       transform: 'translate(' + npx + 'px)'
     })
+    
+    //点击按钮高亮
+    var n = index
+    allButtons.eq(n)
+      .addClass('red')
+      .siblings('.red').removeClass('red')
   })
 }
+
+
+
+
+
+
+
 
 //自动播放、按钮高亮
 var n = 0;
