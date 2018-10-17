@@ -1,25 +1,29 @@
 
   $(p1).on('click',()=>{
-    $(images).css({
-      transform: 'translateX(0)'
-    })
+    $(images).removeClass('pic2')
+    .removeClass('pic3')
+    .removeClass('pic4')
+    .addClass('pic1')
   })
 
   $(p2).on('click',()=>{
-    $(images).css({
-      transform: 'translateX(-300px)'
-    })
+    $(images).removeClass('pic1')
+    .removeClass('pic3')
+    .removeClass('pic4')
+    .addClass('pic2')
   })
 
   $(p3).on('click',()=>{
-    $(images).css({
-      transform: 'translateX(-600px)'
-    })
+     $(images).removeClass('pic1')
+    .removeClass('pic2')
+    .removeClass('pic4')
+    .addClass('pic3') 
   })
   
   $(p4).on('click',()=>{
-    $(images).css({
-      transform: 'translateX(-1200px)'
-    })
+      $(images).removeClass('pic1')
+    .removeClass('pic2')
+    .removeClass('pic3')
+    .addClass('pic4')
   })
 
