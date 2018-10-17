@@ -10,19 +10,32 @@ for(let i=0; i< allButtons.length; i++){
   })
 }
 
+//自动播放、按钮高亮
 var n = 0;
 var size = allButtons.length
 allButtons.eq(n%size).trigger('click')
   .addClass('red')
   .siblings('.red').removeClass('red')
-setInterval(()=>{
+var timerId = setInterval(()=>{// 闹钟去个名字
   n += 1
   allButtons.eq(n%size).trigger('click')
     .addClass('red')
     .siblings('.red').removeClass('red')
 }, 2000)
 
+// 鼠标移入暂停、移开继续
+$('.window').on('mouseenter',()=>{
+  window.clearInterval(timerId) //清楚闹钟
+})
 
+$('.window').on('mouseleave',()=>{
+  timerId = setInterval(()=>{// 闹钟去个名字
+    n += 1
+    allButtons.eq(n%size).trigger('click')
+      .addClass('red')
+      .siblings('.red').removeClass('red')
+  }, 2000)
+})
 
 
 
