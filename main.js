@@ -10,9 +10,7 @@ for(let i=0; i< allButtons.length; i++){
     
     //点击按钮高亮
     var n = index
-    allButtons.eq(n)
-      .addClass('red')
-      .siblings('.red').removeClass('red')
+    activeButton(allButtons.eq(n % size)) 
   })
 }
 
@@ -32,14 +30,14 @@ var timerId = setInterval(()=>{// 闹钟去个名字
   activeButton(allButtons.eq(n % size))
 }, 2000)
 
-//点击按钮，然后添加class类
+//封装1：点击按钮，然后添加class类
 function activeButton($button){//这里需要传入一个按钮 由于需要Jquery对象，所以需要$开头
    $button.trigger('click')
     .addClass('red')
     .siblings('.red').removeClass('red')
 }
 
-
+//封装2：
 
 // 鼠标移入暂停、移开继续
 $('.window').on('mouseenter',()=>{
