@@ -27,16 +27,23 @@ for(let i=0; i< allButtons.length; i++){
 var n = 0;
 var size = allButtons.length
 allButtons.eq(n%size).trigger('click')
-  .addClass('red')
-  .siblings('.red').removeClass('red')
+  //.addClass('red')
+  //.siblings('.red').removeClass('red')
+activeButton(allButtons.eq(n % size))
 var timerId = setInterval(()=>{// 闹钟去个名字
   n += 1
   allButtons.eq(n%size).trigger('click')
-    .addClass('red')
-    .siblings('.red').removeClass('red')
+    //.addClass('red')
+    //.siblings('.red').removeClass('red')
+  activeButton(allButtons.eq(n % size))
 }, 2000)
 
-
+function activeButton($button){//需要传入一个button，需要获取jquery对象，所以要$开头
+  // allButtons.eq(n%size).trigger('click')
+  $button
+    .addClass('red')
+    .siblings('.red').removeClass('red')
+}
 
 
 
