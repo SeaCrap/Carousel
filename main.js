@@ -40,7 +40,7 @@ var timerId = setInterval(()=>{// 闹钟去个名字
 
 function activeButton($button){//需要传入一个button，需要获取jquery对象，所以要$开头
   // allButtons.eq(n%size).trigger('click')
-  $button
+  $button.trigger('click')
     .addClass('red')
     .siblings('.red').removeClass('red')
 }
