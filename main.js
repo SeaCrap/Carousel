@@ -28,16 +28,10 @@ for(let i=0; i< allButtons.length; i++){
 //自动播放、按钮高亮
 var n = 0;
 var size = allButtons.length
-allButtons.eq(n%size).trigger('click')
-  //.addClass('red')
-  //.siblings('.red').removeClass('red')
-activeButton(allButtons.eq(n % size))
+playSilde(n % size)
 var timerId = setInterval(()=>{// 闹钟去个名字
   n += 1
-  allButtons.eq(n%size).trigger('click')
-    //.addClass('red')
-    //.siblings('.red').removeClass('red')
-  activeButton(allButtons.eq(n % size))
+  playSilde(n % size) 
 }, 2000)
 
 function activeButton($button){//需要传入一个button，需要获取jquery对象，所以要$开头
@@ -48,7 +42,13 @@ function activeButton($button){//需要传入一个button，需要获取jquery�
       .siblings('.red').removeClass('red')
 }
 
-
+function playSilde(index){
+  //按钮被点击之后添加class类 
+  //上边事件触发之后已经在处理了
+  // 这里就不需要再激活了
+  allButtons.eq(index).trigger('click')
+  //activeButton(allButtons.eq(index)) 
+}
 
 // 鼠标移入暂停、移开继续
 $('.window').on('mouseenter',()=>{
