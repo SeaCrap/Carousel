@@ -10,9 +10,11 @@ for(let i=0; i< allButtons.length; i++){
     
     //点击按钮高亮
     var n = index
-    allButtons.eq(n)
-      .addClass('red')
-      .siblings('.red').removeClass('red')
+    //这里也是激活button
+   // allButtons.eq(n)
+     // .addClass('red')
+     // .siblings('.red').removeClass('red')
+    activeButton(allButtons.eq(n))
   })
 }
 
@@ -40,9 +42,10 @@ var timerId = setInterval(()=>{// 闹钟去个名字
 
 function activeButton($button){//需要传入一个button，需要获取jquery对象，所以要$开头
   // allButtons.eq(n%size).trigger('click')
-  $button.trigger('click')
-    .addClass('red')
-    .siblings('.red').removeClass('red')
+ // $button.trigger('click')//trigger('click')可以放在外边(上边有了) 这里之激活按钮 
+    $button
+      .addClass('red')
+      .siblings('.red').removeClass('red')
 }
 
 
