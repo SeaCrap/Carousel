@@ -47,7 +47,7 @@ function playSilde(index){
   //上边事件触发之后已经在处理了
   // 这里就不需要再激活了
   allButtons.eq(index).trigger('click')
-  //activeButton(allButtons.eq(index)) 
+  //activeButton(allButtons.eq(index))//这里跟上边重复了
 }
 
 // 鼠标移入暂停、移开继续
@@ -58,9 +58,7 @@ $('.window').on('mouseenter',()=>{
 $('.window').on('mouseleave',()=>{
   timerId = setInterval(()=>{// 闹钟去个名字
     n += 1
-    allButtons.eq(n%size).trigger('click')
-      .addClass('red')
-      .siblings('.red').removeClass('red')
+    playSilde(n % size) 
   }, 2000)
 })
 
