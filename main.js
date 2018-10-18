@@ -10,7 +10,9 @@ for(let i=0; i< allButtons.length; i++){
     
     //点击按钮高亮
     var n = index
-    activeButton(allButtons.eq(n % size)) 
+    allButtons.eq(n)
+      .addClass('red')
+      .siblings('.red').removeClass('red')
   })
 }
 
@@ -24,20 +26,19 @@ for(let i=0; i< allButtons.length; i++){
 //自动播放、按钮高亮
 var n = 0;
 var size = allButtons.length
-activeButton(allButtons.eq(n % size))
+allButtons.eq(n%size).trigger('click')
+  .addClass('red')
+  .siblings('.red').removeClass('red')
 var timerId = setInterval(()=>{// 闹钟去个名字
   n += 1
-  activeButton(allButtons.eq(n % size))
-}, 2000)
-
-//封装1：点击按钮，然后添加class类
-function activeButton($button){//这里需要传入一个按钮 由于需要Jquery对象，所以需要$开头
-   $button.trigger('click')
+  allButtons.eq(n%size).trigger('click')
     .addClass('red')
     .siblings('.red').removeClass('red')
-}
+}, 2000)
 
-//封装2：
+
+
+
 
 // 鼠标移入暂停、移开继续
 $('.window').on('mouseenter',()=>{
